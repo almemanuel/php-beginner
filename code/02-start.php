@@ -1,53 +1,59 @@
 <?php
     // <!-- Available in https://youtu.be/NhUFUfzZowM -->
     // vars
+    $br = '<br>';
     $name = 'Emanuel';
-    $Emanuel = 'bla bla'; // subvar of name
-    echo $$name .' | ';
-    echo 'my name is '.$name .' | ';
+    $Emanuel = 'Almeida'; // subvar of name
+    echo $$name .$br;
+    echo 'my name is '.$name .$br;
 
+    echo $br;
     // conditionals
     if($name == 'Emanuel'){
-        echo 'true | ';
+        echo 'true' .$br;
     } else{
-        echo 'false | ';
+        echo 'false' .$br;
     }
 
     // PHP is dynamic
     $age = '23';
-
+    echo $br;
     // equal
     if($age == 23){
-        echo 'true | ';
+        echo 'true' .$br;
     } else{
-        echo 'false | ';
+        echo 'false' .$br;
     }
 
+    echo $br;
     // identic
     if($age === 23){
-        echo 'true | ';
+        echo 'true' .$br;
     } else{
-        echo 'false | ';
+        echo 'false' .$br;
     }
 
+    echo $br;
     // loopings
     for($i = 0; $i < 10; $i++) {
         echo $i;
-        echo ' | ';
+        echo $br;
     }
 
+    echo $br;
     $i = 0;
     while($i < 10){
-        echo $i .' | ';
+        echo $i .$br;
         $i++;
     }
 
+    echo $br;
     // Functions
     printNumber(30);
 
     function printNumber($n){
         echo $n;
-        echo " | ";
+        echo '<br>';
     }
 
     // Classes
@@ -62,17 +68,19 @@
 
         public function printNameAndAge(){
             echo $this->name;
-            echo ' | ';
+            echo '<br>';
             echo $this->age;
-            echo ' | ';
-
+            echo '<br>';
         }
     }
 
+    echo $br;
     $person = new Person('Emanuel', '23');
     $person->printNameAndAge();
 
+    echo $br;
     // Array
     $arr = ['Emanuel', 'Miguel', 'Rafael'];
     echo $arr[0];
+    echo $br;
 ?>
