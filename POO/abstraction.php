@@ -4,18 +4,25 @@
         public $phone = null;
         public $children = null;
 
-        function description(){
-            return "<ul><li>$this->name</li><li>$this->phone</li><li>$this->children</li></ul>";
+
+        function __set($arg, $value){
+            $this->$arg = $value;
         }
 
-        function changeChildren($children){
-            $this->children = $children;
+
+        function __get($arg){
+            return $this->$arg;
+        }
+
+
+        function description(){
+            return '<ul><li>' . $this->__get('name') . '</li><li>' . $this->__get('phone') . '</li><li>' . $this->__get('children') . '</li></ul>';
         }
     }
 
     $worker = new Worker();
-    $worker->name = 'Johnny';
-    $worker->phone = 15190414123;
-    $worker->changeChildren(1);
+    $worker->__set('name', 'Johnny');
+    $worker->__set('phone', 15190414123);
+    $worker->__set('children', 1);
     echo $worker->description();
 ?>
